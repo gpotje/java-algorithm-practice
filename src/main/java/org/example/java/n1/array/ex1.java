@@ -1,4 +1,4 @@
-package org.example.java.n1;
+package org.example.java.n1.array;
 import java.util.Scanner;
 
 public class ex1 {

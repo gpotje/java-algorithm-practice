@@ -1,4 +1,4 @@
-package org.example.java.n1;
+package org.example.java.n1.array;
 
 public class ex3 {
     public static void main(String[] args) {

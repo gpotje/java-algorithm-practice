@@ -1,0 +1,45 @@
+# N1 - Array Exercises
+
+Base exercises focused on:
+
+- array traversal
+- index manipulation
+- searching
+- counting
+- reversing
+- frequency
+- shifting elements
+- logical reasoning
+
+## Goals
+
+- strengthen problem solving
+- improve array manipulation
+- practice algorithmic thinking
+- build strong programming fundamentals
+
+## Rules
+
+Most exercises avoid:
+- Stream API
+- Collections
+- Set / Map
+- utility methods
+
+Focus:
+- loops
+- conditions
+- manual manipulation
+- clean logic
+
+## Topics
+
+- linear search
+- counting occurrences
+- biggest/smallest number
+- reverse array
+- move zeros
+- rotation
+- duplicates
+- frequency
+- two pointers

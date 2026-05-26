@@ -1,11 +1,15 @@
-package org.example.java.n1;
+package org.example.java.n1.array;
 
 public class ex9 {
     public static void main(String[] args) {
 
-        int numbers[] = {1, 0, 2, 0, 3, 0, 4}; // test 1°
+        //int numbers[] = {1, 0, 2, 0, 3, 0, 4}; // test 1°
+        //int numbers[] = {0, 0, 0}; // test 2°
+        int numbers[] = {1, 2, 3}; // test 3°
+
         int countZero = 0;
         int countNumeber = 0;
+        int arryFinal = 0;
         int arrayZero[];
         int arraynumbers[];
 
@@ -33,15 +37,13 @@ public class ex9 {
             }
         }
 
-        int arryFinal = 0;
+
 
         for(int i = 0; i < arraynumbers.length; i++){
-            //System.out.print(arraynumbers[i]+", ");
             numbers[arryFinal] = arraynumbers[i];
             arryFinal++;
         }
         for(int i = 0; i < arrayZero.length; i++){
-            //System.out.print(arrayZero[i]+", ");
             numbers[arryFinal] = arrayZero[i];
             arryFinal++;
         }
