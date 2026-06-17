@@ -3,23 +3,31 @@ package org.example.java.n2.strings;
 // Remove duplicate characters, keeping only the first occurrence.
 public class Ex14 {
     public static void main(String[] args) {
-        //String text = "";
-        String text = "java";
-        String newString = "";
+        String text = "banana";
+        String result = "";
 
-        int index = text.length()-1;
+        for (int i = 0; i < text.length(); i++) {
 
-        for(int i = 0; i <= index ;i++){
-            for(int j = i + 1; j <= index; j++){
-                char ai = text.charAt(i);
-                char ij =  text.charAt(j);
-                if(text.charAt(i) != text.charAt(j) ){
+            char current = text.charAt(i);
+            boolean exists = false;
 
+            for (int j = 0; j < result.length(); j++) {
+
+                if (current == result.charAt(j)) {
+                    exists = true;
+                    break;
                 }
             }
+
+            if (!exists) {
+                result += current;
+            }
         }
-        System.out.println("All characters are unique: true");
+
+        System.out.println(result);
     }
 
-}
+    }
+
+
 
