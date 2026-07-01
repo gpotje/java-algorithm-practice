@@ -1,4 +1,4 @@
-package org.example.java.n5.ordenacao;
+package org.example.java.n5.busca;
 
 // Calculate the sum of all elements in a matrix.
 public class Ex8 {
