@@ -1,7 +1,7 @@
-package org.example.java.n5.busca;
+package org.example.java.n6.ordenacao;
 
 // Calculate the sum of all elements in a matrix.
-public class Ex12_2 {
+public class Ex1 {
     public static void main(String[] args) {
 
         int[] numbers = {5,2,9,1,7};
