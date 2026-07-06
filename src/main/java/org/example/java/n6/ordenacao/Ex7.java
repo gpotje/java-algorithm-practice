@@ -26,20 +26,6 @@ public class Ex7 {
             numbers[i] = aux;
 
         }
-        printArray(numbers);
+       Util.printArray(numbers);
     }
-
-    public static void printArray(int[] numbers) {
-        System.out.print("{");
-        for (int i = 0 ; i < numbers.length; i++){
-            if(i+1 == numbers.length){
-                System.out.print(numbers[i]);
-            }else{
-                System.out.print(numbers[i]+", ");
-            }
-        }
-        System.out.print("}");
-    }
-
-
 }
