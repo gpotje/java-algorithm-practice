@@ -30,7 +30,7 @@ public class OrderSystem {
     }
     public void removeOrder(String name,String nameProduct){
         int indexUser = findOrderByName(name);
-        int indexOrderNameProduct = findOrderByNameProduct(nameProduct);
+        int indexOrderNameProduct = findOrderByNameProduct(indexUser,nameProduct);
 
         if( indexOrderNameProduct != -1 && indexUser!= -1){
             orders.get(indexUser).getProducts().remove(indexOrderNameProduct);
@@ -66,13 +66,12 @@ public class OrderSystem {
         }
         return -1;
     }
-    private int findOrderByNameProduct(String nameProduct){
-        for(Order order: orders){{
-            for( int j = 0; j <= order.getProducts().size() -1 ; j++)
-                if(order.getProducts().get(j).getName().equals(nameProduct)) {
-                    return j;
-                }
-            }
+    private int findOrderByNameProduct(int index,String nameProduct){
+       for( int j = 0; j <= orders.get(index).getProducts().size() -1 ; j++){
+           if(orders.get(index).getProducts().get(j).getName().equals(nameProduct)) {
+               return j;
+           }
+
         }
             return -1;
     }
