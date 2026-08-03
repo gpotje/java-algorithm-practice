@@ -29,13 +29,13 @@ public class ex23 {
              else if(c[0].equals("ADD_TO_ORDER")) {
                os.addOrder(c[1],c[2]);
             }
-
+            else if(c[0].equals("CANCEL_ORDER")) {
+                os.cancelOrder(c[1]);
+            }
+            else if(c[0].equals("REMOVE_FROM_ORDER")) {
+                os.removeOrder(c[1],c[2]);
+            }
         }
-
-       return os.stringToList();
+        return os.stringToList();
     }
-
-
-
-
 }

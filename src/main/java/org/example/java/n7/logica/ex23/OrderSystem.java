@@ -22,11 +22,30 @@ public class OrderSystem {
     public void addOrder(String name,String nameProduct){
         int indexUser = findOrderByName(name);
         int indexProductCatalog = findProductByName(nameProduct);
-
         if( indexProductCatalog != -1 && indexUser!= -1){
-            orders.get(indexUser).addOrder(name,nameProduct);
+            orders.get(indexUser).addOrder(nameProduct);
         }else {
             System.out.println("Product or User there isn't");
+        }
+    }
+    public void removeOrder(String name,String nameProduct){
+        int indexUser = findOrderByName(name);
+        int indexOrderNameProduct = findOrderByNameProduct(nameProduct);
+
+        if( indexOrderNameProduct != -1 && indexUser!= -1){
+            orders.get(indexUser).getProducts().remove(indexOrderNameProduct);
+        }else {
+            System.out.println("Product or User there isn't");
+        }
+    }
+
+
+    public void cancelOrder(String name){
+        int indexUser = findOrderByName(name);
+        if( indexUser!= -1){
+            orders.remove(indexUser);
+        }else {
+            System.out.println("User there isn't");
         }
     }
 
@@ -47,6 +66,17 @@ public class OrderSystem {
         }
         return -1;
     }
+    private int findOrderByNameProduct(String nameProduct){
+        for(Order order: orders){{
+            for( int j = 0; j <= order.getProducts().size() -1 ; j++)
+                if(order.getProducts().get(j).getName().equals(nameProduct)) {
+                    return j;
+                }
+            }
+        }
+            return -1;
+    }
+
 
     public String stringToList(){
         StringBuilder sb = new StringBuilder();

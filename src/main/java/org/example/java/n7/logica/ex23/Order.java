@@ -13,12 +13,11 @@ Order {
         this.name = name;
     }
 
-    public void addOrder(String name, String p) {
+    public void addOrder(String p) {
         if(this.products == null){
             this.products = new ArrayList<>();
         }
         this.products.add(new Product(p));
-        this.name = name;
     }
 
     public List<Product> getProducts() {
