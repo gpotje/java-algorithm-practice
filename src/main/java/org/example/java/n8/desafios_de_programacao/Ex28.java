@@ -10,20 +10,21 @@ public class Ex28 {
         System.out.println(firstUnique(numbers));
     }
 
-    public static Integer firstUnique(ArrayList<Integer> numbers){
-        for(int i = 0;i <= numbers.size() -1 ; i++){
-            if(findNumber(i,numbers)){
+    public static Integer firstUnique(ArrayList<Integer> numbers) {
+        for (int i = 0; i <= numbers.size() - 1; i++) {
+            if (findNumber(i, numbers)) {
                 return numbers.get(i);
             }
         }
-        return  null;
+        return null;
     }
-    public static boolean findNumber(int index , ArrayList<Integer> numbers) {
+
+    public static boolean findNumber(int index, ArrayList<Integer> numbers) {
         for (int i = 0; i <= numbers.size() - 1; i++) {
-          if(numbers.get(index).equals(numbers.get(i)) && i != index){
-                    return false;
-          }
+            if (numbers.get(index).equals(numbers.get(i)) && i != index) {
+                return false;
+            }
         }
         return true;
-        }
     }
+}
