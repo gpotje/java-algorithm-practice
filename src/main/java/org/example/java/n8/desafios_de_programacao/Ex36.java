@@ -20,7 +20,7 @@ public class Ex36 {
 
         for(int i = 0; i <= numbers.size() - 1; i++  ){
 
-          if( findNumber(integerList,numbers.get(i)) == true ){
+          if( findNumber(integerList,numbers.get(i))){
               return numbers.get(i);
           }
             integerList.add(numbers.get(i));
