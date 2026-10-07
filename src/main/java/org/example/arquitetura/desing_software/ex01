@@ -1,0 +1,9 @@
+🟢 Exercício 1 — resultado
+Você identificou:
+- SRP → uma classe com várias responsabilidades.
+- Acoplamento → responsabilidades concretas estavam concentradas.
+- Abstração → interfaces definem contratos.
+- Polimorfismo → diferentes implementações podem cumprir o contrato.
+- Dependency Injection → dependências são fornecidas externamente.
+- DIP → OrderService depende da abstração.
+Exercício 1/10 concluído. ✅
