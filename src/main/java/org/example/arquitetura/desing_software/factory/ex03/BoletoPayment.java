@@ -1,4 +1,4 @@
-package org.example.arquitetura.desing_software.factory.ex01;
+package org.example.arquitetura.desing_software.factory.ex03;
 
 public class BoletoPayment implements Payment{
     @Override
