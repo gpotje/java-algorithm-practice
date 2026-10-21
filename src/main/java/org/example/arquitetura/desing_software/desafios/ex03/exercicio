@@ -1,0 +1,94 @@
+É exatamente isso que eu quero que você desenvolva na sua trilha: a capacidade de tomar decisões técnicas, e não apenas saber aplicar padrões de projeto.
+
+No seu exercício anterior, você identificou que a regra de desconto poderia mudar independentemente do processamento dos pedidos. Então, criou uma abstração para isso. Foi uma decisão razoável.
+
+Mas, se fosse um programa pequeno, com uma única regra que nunca muda, colocar o desconto diretamente no serviço também poderia ser perfeitamente aceitável. O importante é entender o custo e o benefício de cada escolha.
+
+Vamos aumentar um pouco a dificuldade agora. Você continua livre para decidir como implementar.
+
+# Desafio 9 — Sistema de cobrança de clientes
+
+[Isometric single Invoice, calculator and credit cards. Payment and billing invoices, business or financial operations sign. Vector concept for services rendered.](https://images.openai.com/static-rsc-4/nltC5VGc6DPLNEoGEib84H_L5vrpC_f48x_eGkvKJd6e-NxCxpYAn-gsMBKD6gE_2yZJN-_TF7feiwcjStoLXgACjfADv13GXPP3XOgeqLFteHgURlRyxGaFUATribzOqtiyCn1cbXUnGKEptUv3N3KkPjtXct-i_4efTYmn2Z4T70miFiqnvP52neWlpopK?purpose=inline)
+
+Imagine que você está desenvolvendo um sistema que calcula a cobrança mensal de clientes de uma empresa.
+
+Cada cliente possui:
+
+- Nome
+- Tipo de plano
+- Quantidade de serviços adicionais utilizados
+- Situação do pagamento anterior
+
+## Regras de negócio
+
+Cada cliente tem um plano mensal:
+
+| Plano    | Mensalidade |
+| -------- | ----------- |
+| BASIC    | R$ 50,00    |
+| PREMIUM  | R$ 100,00   |
+| BUSINESS | R$ 200,00   |
+
+Além da mensalidade:
+
+1. Cada serviço adicional custa R$ 15,00.
+2. Se o cliente utilizou mais de 5 serviços adicionais, recebe 20% de desconto sobre o valor dos serviços adicionais, não sobre a mensalidade.
+3. Se o pagamento anterior estiver atrasado, será cobrada uma multa fixa de R$ 25,00.
+4. Clientes bloqueados não devem gerar uma nova cobrança.
+
+## Dados para testar
+
+Você pode usar essas classes como ponto de partida, ou adaptar a estrutura se preferir.
+
+```
+public enum Plan {
+    BASIC, PREMIUM, BUSINESS
+}
+
+public enum PaymentStatus {
+    PAID, OVERDUE
+}
+
+public class Customer {
+    private String name;
+    private Plan plan;
+    private int additionalServices;
+    private PaymentStatus paymentStatus;
+    private boolean blocked;
+
+    // Construtor e getters
+}
+```
+
+Dados dos clientes:
+
+| Cliente | Plano    | Serviços extras | Pagamento anterior | Bloqueado |
+| ------- | -------- | --------------- | ------------------ | --------- |
+| Ana     | BASIC    | 3               | PAID               | Não       |
+| Carlos  | PREMIUM  | 8               | PAID               | Não       |
+| Maria   | BUSINESS | 10              | OVERDUE            | Não       |
+| João    | BASIC    | 6               | OVERDUE            | Sim       |
+| Pedro   | PREMIUM  | 0               | OVERDUE            | Não       |
+
+## Sua missão
+
+Desenvolva um programa que calcule as cobranças e apresente, para cada cliente elegível:
+
+- Nome do cliente.
+- Mensalidade.
+- Valor dos serviços adicionais, já considerando o desconto, quando aplicável.
+- Multa por atraso.
+- Valor total da cobrança.
+
+Ao final, mostre também o valor total de todas as cobranças geradas.
+
+Não vou determinar quantas classes você deve criar, quais métodos deve utilizar nem exigir qualquer padrão específico.
+
+### Como vamos trabalhar
+
+1. Você implementa a solução do seu jeito.
+2. Eu confiro os cálculos e a lógica.
+3. Se houver algum problema, corrigimos juntos.
+4. Depois, discutimos suas decisões de organização e se alguma mudança realmente vale a pena.
+
+Não precisa tentar adivinhar a arquitetura que eu quero ver. Quero ver a solução que você considera adequada. É assim que vamos desenvolver seu raciocínio de arquiteto, um problema de cada vez.
