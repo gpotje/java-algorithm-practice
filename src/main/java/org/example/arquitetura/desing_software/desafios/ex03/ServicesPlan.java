@@ -9,7 +9,7 @@ public class ServicesPlan {
 
         for(Customer c: customerList){
             if(!c.isBlocked()){
-                dto.addMonthly(Plan.planType(c.getPlan()));
+                dto.addMonthly(c.getPlan().getPrice());
                 dto.addCustomer();
                 if(c.getPaymentStatus() == PaymentStatus.OVERDUE){
                     dto.addFines();
@@ -20,5 +20,6 @@ public class ServicesPlan {
 
         return dto;
     }
+
 
 }

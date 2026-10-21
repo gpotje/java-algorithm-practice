@@ -14,7 +14,7 @@ public class TotalOrdersDto {
     }
 
     public void addDiscount(int q){
-        totalDiscount += PaymentStatus.calculatePlanExtra(q);
+        totalDiscount += this.calculatePlanExtra(q);
     }
 
     public void addMonthly(double d){
@@ -37,5 +37,16 @@ public class TotalOrdersDto {
                 " * Total dos serviços extras após descontos: R$"+totalDiscount + "\n"+
                 " * Total das multas: R$ "+totalFines + "\n"+
                 " * Valor total das cobranças: R$ " +addCharges();
+    }
+
+    private double calculatePlanExtra(int q) {
+        double sum = 0.0;
+        if (q > 5) {
+            sum = q * 15;
+            return sum - (sum * 0.20);
+        }
+
+        sum = q * 15;
+        return sum;
     }
 }
